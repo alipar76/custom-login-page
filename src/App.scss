@@ -133,3 +133,42 @@
         }
     }
 }
+
+.form-checkbox {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+
+    label {
+        color: rgb(102, 102, 102);
+        margin-left: 5px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    button {
+        padding: 30px;
+        border-radius: 30px;
+        border: 2px solid rgba(71, 71, 71, 0.3);
+        background-color: white;
+        cursor: pointer;
+
+        .login-choice-icon {
+            color: rgba(37, 37, 37, 0.4);
+        }
+
+        &:hover {
+            border: 2px solid rgba(0, 0, 0, 0.7);
+            transition: 0.3 all ease;
+            .login-choice-icon {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+}

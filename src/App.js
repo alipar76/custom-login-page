@@ -3,6 +3,7 @@ import { RiUserFill } from "react-icons/ri";
 import { MdKey } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaFacebook, FaGithub } from "react-icons/fa";
+import { CiLogin } from "react-icons/ci";
 
 import "./App.scss";
 
@@ -93,6 +94,15 @@ function App() {
                         </button>
                         <button className="choice">
                             <FaGithub className="login-choice-icon" size={20} />
+                        </button>
+                    </div>
+                    <div className="form-checkbox">
+                        <input type="checkbox" name="staysignin" />
+                        <label htmlFor="staysignin">Stay signed in</label>
+                    </div>
+                    <div className="submit-button">
+                        <button type="submit">
+                            <CiLogin className="login-choice-icon" size={30} />
                         </button>
                     </div>
                 </form>
