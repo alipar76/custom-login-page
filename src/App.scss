@@ -111,3 +111,25 @@
         margin-bottom: 30px;
     }
 }
+
+.login-choice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .choice {
+        padding: 5px 0px;
+        width: 49%;
+        text-align: center;
+        border: 1px solid #ebebeb;
+        border-radius: 15px;
+        transition: 0.3s all ease;
+        cursor: pointer;
+        background-color: white;
+        margin-bottom: 5px;
+
+        &:hover {
+            background-color: rgba(184, 184, 184, 0.1);
+        }
+    }
+}

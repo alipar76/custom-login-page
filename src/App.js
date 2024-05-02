@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { RiUserFill } from "react-icons/ri";
 import { MdKey } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
+import { FaApple, FaFacebook, FaGithub } from "react-icons/fa";
 
 import "./App.scss";
 
@@ -74,6 +76,24 @@ function App() {
                             <span>Password</span>
                             <MdKey className="icon" size={20} />
                         </div>
+                    </div>
+                    <div className="login-choice">
+                        <button className="choice">
+                            <FcGoogle className="login-choice-icon" size={20} />
+                        </button>
+                        <button className="choice">
+                            <FaApple className="login-choice-icon" size={20} />
+                        </button>
+                        <button className="choice">
+                            <FaFacebook
+                                className="login-choice-icon"
+                                size={20}
+                                color="#347aeb"
+                            />
+                        </button>
+                        <button className="choice">
+                            <FaGithub className="login-choice-icon" size={20} />
+                        </button>
                     </div>
                 </form>
             </div>
