@@ -1,0 +1,113 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../public/black-smooth-textured-paper-background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: white;
+    width: 400px;
+    padding: 30px 50px;
+
+    .form-field {
+        position: relative;
+        margin-bottom: 22px;
+        background-color: rgba(186, 186, 186, 0.1);
+        height: 48px;
+        border: 2px solid transparent;
+
+        input {
+            background-color: transparent;
+            border: none;
+            color: rgb(31, 31, 31);
+            width: -webkit-fill-available;
+            padding: 21px 8px 8px;
+            box-sizing: border-box;
+            outline: none;
+            height: 100%;
+            font-size: 1.2rem;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        label {
+            color: rgb(102, 102, 102);
+            font-size: 0.9rem;
+            position: absolute;
+            top: 13px;
+            left: 16px;
+            opacity: 1;
+            line-height: normal;
+            pointer-events: none;
+            font-weight: 700;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s, opacity;
+            transform: scale(1);
+        }
+
+        span {
+            color: rgb(102, 102, 102);
+            font-size: 0.7rem;
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            opacity: 0;
+            line-height: normal;
+            pointer-events: none;
+            font-weight: 700;
+            transform-origin: left top;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            transform: translateY(-50%);
+        }
+
+        .icon {
+            position: absolute;
+            top: 13px;
+            right: 16px;
+            pointer-events: none;
+        }
+
+        &:focus-within {
+            border: 2px solid rgb(31, 31, 31);
+        }
+
+        :hover {
+            background-color: rgba(184, 184, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+    }
+
+    .username-field.active {
+        label {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        span {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    .password-field.active {
+        label {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        span {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    h5 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+}

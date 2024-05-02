@@ -1,25 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { RiUserFill } from "react-icons/ri";
+import { MdKey } from "react-icons/md";
+
+import "./App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [usernameClassName, setUsernameClassName] = useState("");
+    const [passwordClassName, setPasswordClassName] = useState("");
+
+    const setUserNameActive = (event) => {
+        setUsernameClassName("active");
+    };
+
+    const setUsernamePassive = (event) => {
+        if (!username) {
+            setUsernameClassName("");
+        }
+    };
+
+    const setPasswordActive = (event) => {
+        setPasswordClassName("active");
+    };
+
+    const setPasswordPassive = (event) => {
+        if (!password) {
+            setPasswordClassName("");
+        }
+    };
+
+    const usernameChangeHandler = (event) => {
+        setUsername(event.target.value);
+    };
+
+    const passwordChangeHandler = (event) => {
+        setPassword(event.target.value);
+    };
+
+    return (
+        <div className="app">
+            <div className="login-box">
+                <h5>Sign in</h5>
+                <form className="form">
+                    <div className="form-fields">
+                        <div
+                            className={
+                                "form-field username-field " + usernameClassName
+                            }
+                        >
+                            <input
+                                type="text"
+                                onFocus={setUserNameActive}
+                                onBlur={setUsernamePassive}
+                                onChange={usernameChangeHandler}
+                            />
+                            <label>Username</label>
+                            <span>Username</span>
+                            <RiUserFill className="icon" size={20} />
+                        </div>
+                        <div
+                            className={
+                                "form-field password-field " + passwordClassName
+                            }
+                        >
+                            <input
+                                type="password"
+                                onFocus={setPasswordActive}
+                                onBlur={setPasswordPassive}
+                                onChange={passwordChangeHandler}
+                            />
+                            <label>Password</label>
+                            <span>Password</span>
+                            <MdKey className="icon" size={20} />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 }
 
 export default App;
