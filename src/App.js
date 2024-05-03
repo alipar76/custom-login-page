@@ -105,6 +105,14 @@ function App() {
                             <CiLogin className="login-choice-icon" size={30} />
                         </button>
                     </div>
+                    <div className="alternative">
+                        <div>
+                            <a href="#">Can't sign in?</a>
+                        </div>
+                        <div>
+                            <a href="#">Create account</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
