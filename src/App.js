@@ -124,22 +124,22 @@ function App() {
                         </div>
                     </div>
                     <div className="login-choice">
-                        <button className="choice">
+                        <a className="choice">
                             <FcGoogle className="login-choice-icon" size={20} />
-                        </button>
-                        <button className="choice">
+                        </a>
+                        <a className="choice">
                             <FaApple className="login-choice-icon" size={20} />
-                        </button>
-                        <button className="choice">
+                        </a>
+                        <a className="choice">
                             <FaFacebook
                                 className="login-choice-icon"
                                 size={20}
                                 color="#347aeb"
                             />
-                        </button>
-                        <button className="choice">
+                        </a>
+                        <a className="choice">
                             <FaGithub className="login-choice-icon" size={20} />
-                        </button>
+                        </a>
                     </div>
                     <div className="form-checkbox">
                         <input type="checkbox" name="staysignin" />
