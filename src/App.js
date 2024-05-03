@@ -10,42 +10,71 @@ import "./App.scss";
 function App() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [usernameValidationErrorStatus, setUsernameValidationErrorStatus] =
+        useState("");
+    const [passwordValidationErrorStatus, setPasswordValidationErrorStatus] =
+        useState("");
     const [usernameClassName, setUsernameClassName] = useState("");
     const [passwordClassName, setPasswordClassName] = useState("");
 
     const setUserNameActive = (event) => {
-        setUsernameClassName("active");
+        if (usernameValidationErrorStatus) setUsernameClassName("error active");
+        else setUsernameClassName("active");
     };
 
     const setUsernamePassive = (event) => {
         if (!username) {
-            setUsernameClassName("");
+            if (usernameValidationErrorStatus) setUsernameClassName("error");
+            else setUsernameClassName("");
         }
     };
 
     const setPasswordActive = (event) => {
-        setPasswordClassName("active");
+        if (passwordValidationErrorStatus) setPasswordClassName("error active");
+        else setPasswordClassName("active");
     };
 
     const setPasswordPassive = (event) => {
         if (!password) {
-            setPasswordClassName("");
+            if (passwordValidationErrorStatus) setPasswordClassName("error");
+            else setPasswordClassName("");
         }
     };
 
     const usernameChangeHandler = (event) => {
         setUsername(event.target.value);
+        if (username) {
+            setUsernameValidationErrorStatus("");
+            setUsernameClassName("active");
+        }
     };
 
     const passwordChangeHandler = (event) => {
         setPassword(event.target.value);
+        if (password) {
+            setPasswordValidationErrorStatus("");
+            setPasswordClassName("active");
+        }
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        if (!username) {
+            setUsernameClassName("error");
+            setUsernameValidationErrorStatus("show");
+        }
+        if (!password) {
+            setPasswordClassName("error");
+            setPasswordValidationErrorStatus("show");
+        }
     };
 
     return (
         <div className="app">
             <div className="login-box">
                 <h5>Sign in</h5>
-                <form className="form">
+                <form className="form" onSubmit={submitHandler}>
                     <div className="form-fields">
                         <div
                             className={
@@ -59,8 +88,16 @@ function App() {
                                 onChange={usernameChangeHandler}
                             />
                             <label>Username</label>
-                            <span>Username</span>
+                            <span className="secondary-label">Username</span>
                             <RiUserFill className="icon" size={20} />
+                            <span
+                                className={
+                                    "validation-message " +
+                                    usernameValidationErrorStatus
+                                }
+                            >
+                                This field is required.
+                            </span>
                         </div>
                         <div
                             className={
@@ -74,8 +111,16 @@ function App() {
                                 onChange={passwordChangeHandler}
                             />
                             <label>Password</label>
-                            <span>Password</span>
+                            <span className="secondary-label">Password</span>
                             <MdKey className="icon" size={20} />
+                            <span
+                                className={
+                                    "validation-message " +
+                                    passwordValidationErrorStatus
+                                }
+                            >
+                                This field is required.
+                            </span>
                         </div>
                     </div>
                     <div className="login-choice">
