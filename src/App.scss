@@ -38,13 +38,13 @@
             color: rgb(102, 102, 102);
             font-size: 0.9rem;
             position: absolute;
-            top: 13px;
+            top: 15px;
             left: 16px;
             opacity: 1;
             line-height: normal;
             pointer-events: none;
             font-weight: 700;
-            letter-spacing: 0.07rem;
+            letter-spacing: 0.04rem;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s, opacity;
             transform: scale(1);
         }
