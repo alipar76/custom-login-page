@@ -142,7 +142,7 @@ function App() {
                         </a>
                     </div>
                     <div className="form-checkbox">
-                        <input type="checkbox" name="staysignin" />
+                        <input type="checkbox" id="staysignin" />
                         <label htmlFor="staysignin">Stay signed in</label>
                     </div>
                     <div className="submit-button">
